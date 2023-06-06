@@ -2,7 +2,8 @@
   "Тестовый пример": "Test example",
   "Перевод": "Translate",
   "Главная страница": "Main page",
-  "Язык": "English",
-  "Страница не найдена": "Page not found"
-
+  "Язык": "En",
+  "Страница не найдена": "Page not found",
+  "Произошла ошибка": "Something went wrong",
+  "Обновить страницу": "Reload page"
 }
