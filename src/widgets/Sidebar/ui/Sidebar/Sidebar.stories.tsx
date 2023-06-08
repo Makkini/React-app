@@ -1,25 +1,22 @@
 import { Meta } from '@storybook/react';
 import { Theme } from 'app/providers/ThemeProvider';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { ThemeSwitcher } from './ThemeSwitcher';
+import { Sidebar } from './Sidebar';
 
 const meta: Meta = {
-  title: 'shared/ThemeSwitcher',
-  component: ThemeSwitcher,
+  title: 'widget/Sidebar',
+  component: Sidebar,
   tags: ['autodocs'],
   argTypes: {
     backgroundColor: { control: 'color' },
-  },
+  }, 
 };
 
 export default meta;
- 
-    export const Normal = () => (
-        <ThemeSwitcher/>
-    );
-     
 
-    export const Dark = () => (
-        <ThemeSwitcher />
-    );
-    Dark.decorators = [ThemeDecorator(Theme.DARK)];
+export const Light = () => <Sidebar />;
+Light.args = {};
+
+export const Dark = () => <Sidebar />;
+Dark.args = {};
+Dark.decorators = [ThemeDecorator(Theme.DARK)];

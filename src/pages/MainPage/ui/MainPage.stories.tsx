@@ -1,11 +1,11 @@
 import { Meta } from '@storybook/react';
 import { Theme } from 'app/providers/ThemeProvider';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { ThemeSwitcher } from './ThemeSwitcher';
+import MainPage from './MainPage';
 
 const meta: Meta = {
-  title: 'shared/ThemeSwitcher',
-  component: ThemeSwitcher,
+  title: 'pages/MainPage', 
+  component: MainPage,
   tags: ['autodocs'],
   argTypes: {
     backgroundColor: { control: 'color' },
@@ -13,13 +13,13 @@ const meta: Meta = {
 };
 
 export default meta;
- 
+
     export const Normal = () => (
-        <ThemeSwitcher/>
+        <MainPage/>
     );
      
 
     export const Dark = () => (
-        <ThemeSwitcher />
+        <MainPage/>
     );
     Dark.decorators = [ThemeDecorator(Theme.DARK)];
