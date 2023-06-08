@@ -10,5 +10,5 @@ const MainPage = () => {
         {t('Главная страница')}
     </div>
   );
-};
-export default MainPage;
+}; 
+ export default MainPage;
