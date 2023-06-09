@@ -7,7 +7,7 @@ on:
     branches: [master]
 jobs:
   pipeline:
-    runs-on: windows 10
+    runs-on: windows-latest
     strategy:
       matrix:
         node-version: [ 19.x ]
