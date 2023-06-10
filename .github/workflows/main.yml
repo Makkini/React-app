@@ -32,8 +32,6 @@ jobs:
       - name: build storybook
         run: npm run build-storybook
         if: always()
-      - name: screenshot testig
-        run: npx chromatic --project-token=chpt_d6824027f565bf5
-        if: always()
+
 
 
