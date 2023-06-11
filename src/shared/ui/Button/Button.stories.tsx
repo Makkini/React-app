@@ -19,11 +19,21 @@ export const Primary = () => <Button>Text</Button>;
 
 export const Clear = () => <Button theme={ButtonTheme.CLEAR}>Text</Button>;
 
+export const ClearInverted = () => <Button theme={ButtonTheme.CLEAR_INVERTED}>Text</Button>;
+
 export const Outline = () => <Button theme={ButtonTheme.OUTLINE}>Text</Button>;
 
-export const OutlineSizeL = () => <Button size={ButtonSize.L} theme={ButtonTheme.OUTLINE}>Text</Button>;
+export const OutlineSizeL = () => (
+  <Button size={ButtonSize.L} theme={ButtonTheme.OUTLINE}>
+    Text
+  </Button>
+);
 
-export const OutlineSizeXL = () => <Button size={ButtonSize.XL} theme={ButtonTheme.OUTLINE}>Text</Button>;
+export const OutlineSizeXL = () => (
+  <Button size={ButtonSize.XL} theme={ButtonTheme.OUTLINE}>
+    Text
+  </Button>
+);
 
 export const OutlineDark = () => <Button theme={ButtonTheme.OUTLINE}>Text</Button>;
 OutlineDark.decorators = [ThemeDecorator(Theme.DARK)];
