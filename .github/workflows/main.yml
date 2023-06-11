@@ -36,5 +36,5 @@ jobs:
         uses: chromaui/action@v1
         with:
           projectToken: ${{ --project-token=chpt_d6824027f565bf5 }}
-
+          
   
