@@ -61,3 +61,16 @@ export const SquareSizeXL = () => (
     {'>'}
   </Button>
 );
+
+export const Disabled = () => (
+  <Button disabled={true} theme={ButtonTheme.OUTLINE}>
+    {'Text'}
+  </Button>
+);
+
+export const DisabledDark = () => (
+  <Button disabled={true} theme={ButtonTheme.OUTLINE}>
+    {'Text'}
+  </Button>
+);
+DisabledDark.decorators = [ThemeDecorator(Theme.DARK)];

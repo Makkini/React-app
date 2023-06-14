@@ -15,5 +15,6 @@ const preview: Preview = {
   },
 };
 
+
 export const parameters = preview.parameters;
 export const decorators = [StyleDecorator , ThemeDecorator(Theme.LIGHT), RouterDecorator];
