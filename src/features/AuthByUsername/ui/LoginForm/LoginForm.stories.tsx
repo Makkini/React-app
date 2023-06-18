@@ -15,17 +15,17 @@ const meta: Meta = {
 
 export default meta;
 
-export const Primary = () => <LoginForm/>
+export const Primary = () => <LoginForm onSuccess={()=> ''} />
 Primary.decorators = [StoreDecorator({
     loginForm: {username: 'Makkinni', password: "Kaguya"}
 })]
 
-export const withError = () => <LoginForm/>
+export const withError = () => <LoginForm onSuccess={()=> ''} />
 withError.decorators = [StoreDecorator({
     loginForm: {username: 'Makkinni', password: "Kaguya", error: "incorrect"}
 })]
 
-export const Loading = () => <LoginForm/>
+export const Loading = () => <LoginForm onSuccess={()=> ''}/>
 Loading.decorators = [StoreDecorator({
     loginForm: {isLoading: true}
 })]

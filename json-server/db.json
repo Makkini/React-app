@@ -25,6 +25,15 @@
         "password": "123"
       }
     ],
-    "profile": { "name": "typicode" }
+    "profile": {
+        "first": "Makkinni",
+        "lastname": "Merritt",
+        "age": 18,
+        "currency": "RUB",
+        "country": "Japan",
+        "city": "Tokyo",
+        "username": "admin",
+        "avatar": "https://i.pinimg.com/564x/71/97/be/7197be9c7fe0c523b1862e2623f03024.jpg"
+    }
   }
   
