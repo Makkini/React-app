@@ -4,6 +4,7 @@ import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
 import { SidebarItemType } from '../../model/items';
 import { classNames } from 'shared/lib/classNames/classNames';
+
 interface SidebarItemProps {
   item?: SidebarItemType;
   collapsed: boolean;
@@ -11,14 +12,21 @@ interface SidebarItemProps {
 
 export const SidebarItem = ({ item, collapsed }: SidebarItemProps) => {
   const { t } = useTranslation();
+  
+  if (!item) {
+    return null; // Return null or handle the case when item is undefined
+  }
+
+  const { Icon, path, text } = item;
+
   return (
     <AppLink
       theme={AppLinkTheme.SECONDARY}
-      to={item.path}
+      to={path}
       className={classNames(cls.item, { [cls.collapsed]: collapsed })}
     >
-      <item.Icon className={cls.icon} />
-      <span className={cls.link}>{t(item.text)}</span>
+      <Icon className={cls.icon} />
+      <span className={cls.link}>{t(text)}</span>
     </AppLink>
   );
 };

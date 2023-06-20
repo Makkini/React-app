@@ -2,7 +2,6 @@ import cls from './LoginForm.module.scss';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
-import { Input } from 'shared/ui/Input/Input';
 import { useDispatch, useSelector } from 'react-redux';
 import { memo, useCallback } from 'react';
 import { loginActions, loginReducer } from '../../model/slice/loginSlice';
@@ -15,6 +14,7 @@ import { getLoginIsLoading } from '../../model/selectors/getLoginIsLoading/getLo
 import { getLoginError } from '../../model/selectors/getLoginError/getLoginError';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { Input } from 'shared/ui/Input/Input';
 export interface LoginFormProps {
   className?: string;
   onSuccess: ()=>void
@@ -58,7 +58,6 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
   }, [onSuccess, dispatch, username, password]);
 
   return (
-    //@ts-ignore
     <DynamicModuleLoader removeAfterUnmount={true} reducers={initialReducers}>
       <div className={classNames(cls.LoginForm, {}, [className])}>
         <Text title={t('Форма авторизации')} />
@@ -69,6 +68,7 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
           autofocus
           type="text"
           className={cls.input}
+          //@ts-ignore
           placeholder={t('Введите имя пользователя')}
           onChange={onChangeUsername}
           value={username}
@@ -76,6 +76,7 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
         <Input
           type="text"
           className={cls.input}
+          //@ts-ignore
           placeholder={t('Введите пароль')}
           onChange={onChangePassword}
           value={password}
