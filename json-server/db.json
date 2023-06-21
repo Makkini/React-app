@@ -1,39 +1,38 @@
 {
-    "posts": [
-      {
-        "id": "1",
-        "title": "json-server",
-        "userId": "1"
-      },
-      {
-        "id": "2",
-        "title": "json-server",
-        "userId": "2"
-      }
-    ],
-    "comments": [
-      {
-        "id": "1",
-        "body": "some comment",
-        "postId": "1"
-      }
-    ],
-    "users": [
-      {
-        "id": "1",
-        "username": "admin",
-        "password": "123"
-      }
-    ],
-    "profile": {
-        "first": "Makkinni",
-        "lastname": "Merritt",
-        "age": 18,
-        "currency": "RUB",
-        "country": "Japan",
-        "city": "Tokyo",
-        "username": "admin",
-        "avatar": "https://i.pinimg.com/564x/71/97/be/7197be9c7fe0c523b1862e2623f03024.jpg"
+  "posts": [
+    {
+      "id": "1",
+      "title": "json-server",
+      "userId": "1"
+    },
+    {
+      "id": "2",
+      "title": "json-server",
+      "userId": "2"
     }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "body": "some comment",
+      "postId": "1"
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "username": "admin",
+      "password": "123"
+    }
+  ],
+  "profile": {
+    "first": "Makkinni",
+    "lastname": "Merritt",
+    "age": 18,
+    "currency": "USD",
+    "country": "Japan",
+    "city": "Tokyo",
+    "username": "admin",
+    "avatar": "https://i.pinimg.com/564x/4f/32/8a/4f328ab1d57e8b5df3532932b1290a1c.jpg"
   }
-  
+}
