@@ -23,7 +23,7 @@ export function createReduxStore(
         api: $api,
         navigate,
     }
-
+    //@ts-ignore
     const store = configureStore({
         reducer: reducerManager.reduce as Reducer<CombinedState<StateSchema>>,
         devTools: __IS_DEV__,
