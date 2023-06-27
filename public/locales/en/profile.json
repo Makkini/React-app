@@ -13,5 +13,7 @@
     "Некорректный возраст": "Uncorrect age",
     "Некорректный регион": "Uncorrect City",
     "Имя и фамилия обязательны": "Uncorrect Name or Lastname",
-    "Данные не указаны": "Uncorrect Data"
+    "Данные не указаны": "Uncorrect Data",
+    "Укажите валюту": "Choose Currency",
+    "Укажите страну": "Choose Country"
 }
