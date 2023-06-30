@@ -10,14 +10,10 @@ interface ArticlesPageProps {
 
 const ArticlesPage = (props: ArticlesPageProps) => {
     const { className, view } = props;
-;
-
     const { t } = useTranslation();
     return (
         <div className={classNames(cls.ArticlesPage, {}, [className])}>
-            <ArticleList
-                articles={[]}
-            />
+            <ArticleList view={ArticleView.BIG} articles={[]} />
         </div>
     );
 };
