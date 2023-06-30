@@ -1,0 +1,15 @@
+
+.BIG {
+    .card {
+        margin-bottom: 45px;
+    }
+}
+
+.SMALL {
+    display: flex;
+    flex-wrap: wrap;
+    .card {
+        margin-right: 45px;
+        margin-bottom: 45px;
+    }
+}

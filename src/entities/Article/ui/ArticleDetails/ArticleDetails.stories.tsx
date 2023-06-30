@@ -3,7 +3,7 @@ import { ArticleDetails } from './ArticleDetails';
 import { Article, ArticleBlockType, ArticleType } from 'entities/Article/model/types/article';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 const meta: Meta = {
-    title: 'entities/ArticleDetails',
+    title: 'entities/Article/ArticleDetails',
     component: ArticleDetails,
     tags: ['autodocs'],
     argTypes: {
@@ -20,6 +20,10 @@ const article: Article = {
     views: 1022,
     createdAt: '26.02.2022',
     type: [ArticleType.IT],
+    user: {
+        id: '1',
+        username: 'makkinni',
+    },
     blocks: [
         {
             id: '1',
