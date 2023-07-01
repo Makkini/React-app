@@ -1,7 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { ThunkConfig } from 'app/providers/StoreProvider';
 import { User, userActions } from 'entities/User';
-import { USER_LOCALSTORAGE_KEY } from 'shared/const/locatstorage';
+import { USER_LOCALSTORAGE_KEY } from 'shared/const/localstorage';
 import { Profile } from '../../types/profile';
 
 export const fetchProfileData = createAsyncThunk<Profile, string, ThunkConfig<string>>(
@@ -10,10 +10,10 @@ export const fetchProfileData = createAsyncThunk<Profile, string, ThunkConfig<st
         const { extra, rejectWithValue } = thunkApi;
 
         try {
-            const response = await extra.api.get<Profile>('/profile/'+profileId);
+            const response = await extra.api.get<Profile>('/profile/' + profileId);
 
-            if(!response.data){
-                throw new Error()
+            if (!response.data) {
+                throw new Error();
             }
 
             return response.data;
