@@ -12,7 +12,7 @@ interface CommentListProps {
 }
 
 export const CommentList = memo(({ className, comments, isLoading }: CommentListProps) => {
-    const { t } = useTranslation();
+    const { t } = useTranslation('article-details');
 
     if(isLoading){
         return (
