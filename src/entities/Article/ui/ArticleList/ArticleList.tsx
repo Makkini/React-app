@@ -5,6 +5,7 @@ import { ArticleListItemSkeleton } from 'entities/Article/ui/ArticleListItem/Art
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
 import cls from './ArticleList.module.scss';
 import { Article, ArticleView } from '../../model/types/article';
+import { Text, TextSize } from 'shared/ui/Text/Text';
 
 interface ArticleListProps {
     className?: string;
@@ -23,6 +24,14 @@ const getSkeletons = (view: ArticleView) =>
 export const ArticleList = memo((props: ArticleListProps) => {
     const { className, articles, view = ArticleView.SMALL, isLoading } = props;
     const { t } = useTranslation();
+
+    if (!isLoading && !articles.length) {
+        return (
+            <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
+                <Text size={TextSize.L} title={t('Cтатьи не найдены')} />
+            </div>
+        );
+    }
 
     const renderArticle = (article: Article) => (
         <ArticleListItem article={article} view={view} className={cls.card} key={article.id} />
