@@ -32,7 +32,7 @@ interface ArticlesPageFiltresProps {
 }
 
 export const ArticlesPageFiltres = memo(({ className }: ArticlesPageFiltresProps) => {
-    const { t } = useTranslation();
+    const { t } = useTranslation('article-details');
     const view = useSelector(getArticlesPageView);
     const dispatch = useAppDispatch();
     const sort = useSelector(getArticlesPageSort);

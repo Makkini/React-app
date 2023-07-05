@@ -5,6 +5,23 @@
     "Комментарии отсутствуют": "No comments",
     "Статья не найдена": "Article Not Found",
     "Назад к списку": "Back to Articles",
-    "Читать далее": "Read"
+    "Читать далее": "Read",
+    "Редактировать": "Edit",
+    "Рекомендуем": "Recommendations",
+    "Возрастанию": "Asc",
+    "Убыванию": "Desc",
+    "Дате создания": "Creation date",
+    "Названию": "Title",
+    "Просмотрам": "Views",
+    "Сортировать по": "Sort By",
+    "по": "By",
+    "Поиск": "Search",
+    "Все статьи": "All Articles",
+    "Айти": "IT",
+    "Экономика": "Economics",
+    "Наука": "Science",
+    "Создание новой статьи": "Make your Article",
+    "Редактирование статьи с ID = ": "Edit article ID = "
+
 
 }
