@@ -10,10 +10,11 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module'
   },
-  plugins: ['react', 'i18next', 'react-hooks'],
+  plugins: ['react', 'i18next', 'react-hooks', 'makkinni-plugin'],
   rules: {
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
+    'makkinni-plugin/path-checker': 'error',
     'i18next/no-literal-string': ['error', {
       markupOnly: true
     }]

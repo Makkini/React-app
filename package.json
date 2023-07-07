@@ -14,7 +14,8 @@
     "test:unit": "jest --config ./config/jest/jest.config.ts",
     "storybook": "storybook dev -p 6006 -c ./config/storybook",
     "build-storybook": "storybook build  -c ./config/storybook",
-    "chromatic": "npx chromatic --project-token=chpt_d6824027f565bf5"
+    "chromatic": "npx chromatic --project-token=chpt_d6824027f565bf5",
+    "lint:ts": "eslint \"**/*.{ts,tsx}\""
   },
   "keywords": [],
   "author": "",
@@ -54,6 +55,7 @@
     "eslint-config-standard-with-typescript": "^35.0.0",
     "eslint-plugin-i18next": "^6.0.1",
     "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-makkinni-plugin": "^0.0.0",
     "eslint-plugin-n": "^15.7.0",
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-react": "^7.32.2",
