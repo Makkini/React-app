@@ -44,3 +44,12 @@ onlyTextDark.decorators = [ThemeDecorator(Theme.DARK)];
 export const SizeL = () => (
     <Text title={'Title 123& lorem'} text={'Description 123& DESCRIPTION'} size={TextSize.L} />
 );
+
+export const SizeM = () => (
+    <Text title={'Title 123& lorem'} text={'Description 123& DESCRIPTION'} size={TextSize.M} />
+);
+
+export const SizeS = () => (
+    <Text title={'Title 123& lorem'} text={'Description 123& DESCRIPTION'} size={TextSize.S} />
+);
+
