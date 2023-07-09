@@ -37,7 +37,7 @@ export const CurrencySelect = memo(
                 className={className}
                 onChange={onChangeHandler}
                 readonly={readonly}
-                direction={'top'}
+                direction={'top right'}
             />
         );
     },
