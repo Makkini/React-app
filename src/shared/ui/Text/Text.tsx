@@ -1,11 +1,11 @@
-import cls from './Text.module.scss';
-import { classNames, Mods } from 'shared/lib/classNames/classNames';
 import { memo } from 'react';
+import { classNames, Mods } from 'shared/lib/classNames/classNames';
+import cls from './Text.module.scss';
 
 export enum TextTheme {
     PRIMARY = 'primary',
     ERROR = 'error',
-    INVERTED = 'inverted'
+    INVERTED = 'inverted',
 }
 
 export enum TextAlign {
@@ -19,7 +19,6 @@ export enum TextSize {
     S = 'size_s',
 }
 
-
 interface TextProps {
     className?: string;
     title?: string | null;
@@ -27,16 +26,17 @@ interface TextProps {
     theme?: TextTheme;
     align?: TextAlign;
     size?: TextSize;
+
+    'data-testid'?: string;
 }
 
-type HeaderTagType = 'h1' | 'h2' | 'h3'
+type HeaderTagType = 'h1' | 'h2' | 'h3';
 
 const mapSizeToHeaderTag: Record<TextSize, HeaderTagType> = {
     [TextSize.S]: 'h3',
     [TextSize.M]: 'h2',
-    [TextSize.L]: 'h1'
-
-}
+    [TextSize.L]: 'h1',
+};
 
 export const Text = memo((props: TextProps) => {
     const {
@@ -46,9 +46,10 @@ export const Text = memo((props: TextProps) => {
         theme = TextTheme.PRIMARY,
         align = TextAlign.LEFT,
         size = TextSize.M,
+        'data-testid': dataTestId = 'Text',
     } = props;
 
-    const HeaderTag = mapSizeToHeaderTag[size]
+    const HeaderTag = mapSizeToHeaderTag[size];
 
     const mods: Mods = {
         [cls[theme]]: true,
@@ -58,8 +59,16 @@ export const Text = memo((props: TextProps) => {
 
     return (
         <div className={classNames(cls.Text, mods, [className])}>
-            {title && <HeaderTag className={cls.title}>{title}</HeaderTag>}
-            {text && <p className={cls.text}>{text}</p>}
+            {title && (
+                <HeaderTag className={cls.title} data-testid={`${dataTestId}.Header`}>
+                    {title}
+                </HeaderTag>
+            )}
+            {text && (
+                <p data-testid={`${dataTestId}.Paragraph`} className={cls.text}>
+                    {text}
+                </p>
+            )}
         </div>
     );
 });
