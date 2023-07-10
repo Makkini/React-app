@@ -1,4 +1,4 @@
-import { getUserAuthData, userActions } from 'entities/User';
+import { getUserAuthData, isUserAdmin, isUserManager, userActions } from 'entities/User';
 import { LoginModal } from 'features/AuthByUsername';
 import { memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -19,9 +19,10 @@ interface NavbarProps {
 export const Navbar = memo(({ className }: NavbarProps) => {
     const { t } = useTranslation();
     const [isAuthModal, setIsAuthModal] = useState(false);
-    const dispatch = useDispatch();
-
     const authData = useSelector(getUserAuthData);
+    const dispatch = useDispatch();
+    const isAdmin = useSelector(isUserAdmin);
+    const isManager = useSelector(isUserManager);
 
     const onCloseModal = useCallback(() => {
         setIsAuthModal(false);
@@ -35,21 +36,31 @@ export const Navbar = memo(({ className }: NavbarProps) => {
         dispatch(userActions.logout());
     }, [dispatch]);
 
+    const isAdminPanelAvailable = isAdmin || isManager;
+
     if (authData) {
         return (
-            <header className={classNames(cls.Navbar)}>
-                <Text theme={TextTheme.INVERTED} title={'App'} className={cls.appName} />
+            <header className={classNames(cls.Navbar, {}, [className])}>
+                <Text className={cls.appName} title={t('App')} theme={TextTheme.INVERTED} />
                 <AppLink
-                    className={cls.createBtn}
-                    theme={AppLinkTheme.SECONDARY}
                     to={RoutePath.article_create}
+                    theme={AppLinkTheme.SECONDARY}
+                    className={cls.createBtn}
                 >
                     {t('Создать статью')}
                 </AppLink>
                 <Dropdown
-                    direction={'bottom left'}
+                    direction="bottom left"
                     className={cls.dropdown}
                     items={[
+                        ...(isAdminPanelAvailable
+                            ? [
+                                  {
+                                      content: t('Админка'),
+                                      href: RoutePath.admin_panel,
+                                  },
+                              ]
+                            : []),
                         {
                             content: t('Профиль'),
                             href: RoutePath.profile + authData.id,
@@ -66,7 +77,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
     }
 
     return (
-        <header className={classNames(cls.Navbar)}>
+        <header className={classNames(cls.Navbar, {}, [className])}>
             <Button theme={ButtonTheme.CLEAR_INVERTED} className={cls.links} onClick={onShowModal}>
                 {t('Войти')}
             </Button>
