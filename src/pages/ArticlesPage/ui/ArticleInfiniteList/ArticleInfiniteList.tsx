@@ -11,7 +11,6 @@ import { useSearchParams } from 'react-router-dom';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Text } from 'shared/ui/Text/Text';
 import { getArticles } from '../../model/slices/articlesPageSlice';
-import cls from './ArticleInfiniteList.module.scss';
 interface ArticleInfiniteListProps {
     className?: string;
 }
@@ -30,7 +29,7 @@ export const ArticleInfiniteList = memo(({ className }: ArticleInfiniteListProps
     }
 
     return (
-        <div className={classNames(cls.ArticleInfiniteList, {}, [className])}>
+        <div className={classNames('', {}, [className])}>
             <ArticleList
                 className={className}
                 isLoading={isLoading}

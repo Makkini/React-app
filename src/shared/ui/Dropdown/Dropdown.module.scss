@@ -10,6 +10,7 @@
     border: none;
     cursor: pointer;
 }
+
 .menu {
     background: var(--card-bg);
     position: absolute;
@@ -19,6 +20,7 @@
     flex-direction: column;
     display: flex;
 }
+
 .item {
     padding: 10px 25px;
     width: 100%;
