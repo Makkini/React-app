@@ -1,11 +1,10 @@
-import cls from './SidebarItem.module.scss';
-import { useTranslation } from 'react-i18next';
-import { RoutePath } from 'shared/config/routeConfig/routeConfig';
-import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
-import { classNames } from 'shared/lib/classNames/classNames';
 import { getUserAuthData } from 'entities/User';
+import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
+import { classNames } from 'shared/lib/classNames/classNames';
+import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
 import { SidebarItemType } from 'widgets/Sidebar/model/types/sidebar';
+import cls from './SidebarItem.module.scss';
 
 interface SidebarItemProps {
     item?: SidebarItemType;
@@ -15,10 +14,10 @@ interface SidebarItemProps {
 export const SidebarItem = ({ item, collapsed }: SidebarItemProps) => {
     const { t } = useTranslation();
 
-    const isAuth = useSelector(getUserAuthData)
+    const isAuth = useSelector(getUserAuthData);
 
-    if(item?.authOnly && !isAuth){
-        return null
+    if (item?.authOnly && !isAuth) {
+        return null;
     }
 
     if (!item) {

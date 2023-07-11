@@ -75,8 +75,7 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
                 <Input
                     type="text"
                     className={cls.input}
-                    //@ts-ignore
-                    placeholder={t('Введите пароль')}
+                    placeholder={t('Введите пароль')!}
                     onChange={onChangePassword}
                     value={password}
                 />

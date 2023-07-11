@@ -1,10 +1,10 @@
-import { Story } from '@storybook/react'
-import { BrowserRouter } from 'react-router-dom'
+import { Story } from '@storybook/react';
+import { BrowserRouter } from 'react-router-dom';
 
-export const RouterDecorator = (story: () => React.ReactNode): JSX.Element => {
-  return (
-    <BrowserRouter>
-      {story()}
-    </BrowserRouter>
-  )
-}
+export const RouterDecorator = (StoryComponent: Story) => {
+    return (
+        <BrowserRouter>
+            <StoryComponent />
+        </BrowserRouter>
+    );
+};

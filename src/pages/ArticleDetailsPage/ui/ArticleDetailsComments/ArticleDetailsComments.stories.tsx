@@ -1,10 +1,10 @@
 import { Meta } from '@storybook/react';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
-import {EditableProfileCard} from './EditableProfileCard';
+import {ArticleDetailsComments} from './ArticleDetailsComments';
 
 const meta: Meta = {
-  title: 'pages/EditableProfileCard',
-  component: EditableProfileCard,
+  title: 'pages/ArticleDetailsComments',
+  component: ArticleDetailsComments,
   tags: ['autodocs'],
   argTypes: {
     backgroundColor: { control: 'color' },
@@ -14,6 +14,6 @@ const meta: Meta = {
 export default meta;
 
 export const Normal = () => (
-  <EditableProfileCard id={'1'} />
+  <ArticleDetailsComments id={'1'} />
 );
 Normal.decorators = [StoreDecorator({})]

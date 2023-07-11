@@ -1,26 +1,24 @@
-import cls from './AddCommentForm.module.scss';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { useTranslation } from 'react-i18next';
 import { memo, useCallback } from 'react';
-import { Input } from 'shared/ui/Input/Input';
-import { Button } from 'shared/ui/Button/Button';
+import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import {
-    getAddCommentFormError,
-    getAddCommentFormText,
-} from '../../model/selectors/addCommentFormSelectors';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import {
-    addCommentFormActions,
-    addCommentFormReducer,
-} from '../../model/slices/addCommentFormSlice';
+import { classNames } from 'shared/lib/classNames/classNames';
 import {
     DynamicModuleLoader,
     ReducersList,
 } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { Button } from 'shared/ui/Button/Button';
+import { Input } from 'shared/ui/Input/Input';
 import { HStack } from 'shared/ui/Stack';
-
-
+import {
+    getAddCommentFormError,
+    getAddCommentFormText,
+} from '../../model/selectors/addCommentFormSelectors';
+import {
+    addCommentFormActions,
+    addCommentFormReducer,
+} from '../../model/slices/addCommentFormSlice';
+import cls from './AddCommentForm.module.scss';
 
 export interface AddCommentFormProps {
     className?: string;
@@ -38,10 +36,10 @@ const AddCommentForm = memo(({ className, onSendComment }: AddCommentFormProps) 
         [dispatch],
     );
 
-    const onSendHandler = useCallback(()=>{
-        onSendComment(text || '')
-        onCommentTextChange('')
-    }, [onCommentTextChange, onSendComment, text])
+    const onSendHandler = useCallback(() => {
+        onSendComment(text || '');
+        onCommentTextChange('');
+    }, [onCommentTextChange, onSendComment, text]);
 
     const reducers: ReducersList = {
         addCommentForm: addCommentFormReducer,
@@ -49,7 +47,11 @@ const AddCommentForm = memo(({ className, onSendComment }: AddCommentFormProps) 
 
     return (
         <DynamicModuleLoader reducers={reducers}>
-            <HStack justify={'between'} max className={classNames(cls.AddCommentForm, {}, [className])}>
+            <HStack
+                justify={'between'}
+                max
+                className={classNames(cls.AddCommentForm, {}, [className])}
+            >
                 <Input
                     className={cls.input}
                     placeholder={t('Введите текст комментария')!}
