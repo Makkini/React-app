@@ -1,15 +1,20 @@
-import cls from './ArticlesPageFiltres.module.scss';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { useTranslation } from 'react-i18next';
-import { memo, useCallback, useMemo } from 'react';
 import {
     ArticleSortField,
     ArticleSortSelector,
+    ArticleType,
     ArticleTypeTabs,
-    ArticleView,
     ArticleViewSelector,
 } from 'entities/Article';
-import { articlesPageActions } from '../../model/slices/articlesPageSlice';
+import { ArticleView } from 'entities/Article/model/consts/articleConsts';
+import { memo, useCallback } from 'react';
+import { useTranslation } from 'react-i18next';
+import { useSelector } from 'react-redux';
+import { classNames } from 'shared/lib/classNames/classNames';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { useDebounce } from 'shared/lib/hooks/useDebounce/useDebounce';
+import { SortOrder } from 'shared/types';
+import { Card } from 'shared/ui/Card/Card';
+import { Input } from 'shared/ui/Input/Input';
 import {
     getArticlesPageOrder,
     getArticlesPageSearch,
@@ -17,16 +22,9 @@ import {
     getArticlesPageType,
     getArticlesPageView,
 } from '../../model/selectors/articlesPageSelectors';
-import { useSelector } from 'react-redux';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { Select } from 'shared/ui/Select/Select';
-import { Card } from 'shared/ui/Card/Card';
-import { Input } from 'shared/ui/Input/Input';
-import { SortOrder } from 'shared/types';
 import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList';
-import { useDebounce } from 'shared/lib/hooks/useDebounce/useDebounce';
-import { TabItem, Tabs } from 'shared/ui/Tabs/Tabs';
-import { ArticleType } from 'entities/Article/model/types/article';
+import { articlesPageActions } from '../../model/slices/articlesPageSlice';
+import cls from './ArticlesPageFiltres.module.scss';
 interface ArticlesPageFiltresProps {
     className?: string;
 }

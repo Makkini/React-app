@@ -1,2 +1,2 @@
+export type { ProfileSchema } from './model/consts/consts';
 export { EditableProfileCard } from './ui/EditableProfileCard/EditableProfileCard';
-export { ProfileSchema } from './model/types/editableProfileCardSchema';
