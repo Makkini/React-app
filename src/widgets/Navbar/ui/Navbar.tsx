@@ -12,6 +12,7 @@ import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { HStack } from 'shared/ui/Stack';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
 import cls from './Navbar.module.scss';
+
 interface NavbarProps {
     className?: string;
 }
@@ -24,6 +25,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
     const onCloseModal = useCallback(() => {
         setIsAuthModal(false);
     }, []);
+
     const onShowModal = useCallback(() => {
         setIsAuthModal(true);
     }, []);
