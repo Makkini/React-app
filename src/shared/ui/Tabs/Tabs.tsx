@@ -1,5 +1,5 @@
 import cls from './Tabs.module.scss';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { memo, ReactNode, useCallback } from 'react';
 import { Card, CardTheme } from '../Card/Card';
 

@@ -1,5 +1,5 @@
 import cls from './Select.module.scss';
-import { classNames, Mods } from 'shared/lib/classNames/classNames';
+import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 import { ChangeEvent, memo, useMemo } from 'react';
 
 export interface SelectOption<T extends string> {
