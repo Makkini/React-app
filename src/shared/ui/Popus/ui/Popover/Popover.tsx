@@ -1,7 +1,7 @@
-import { Popover as HPopover } from '@headlessui/react';
-import { ReactNode } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { DropdownDirection } from '@/shared/types/ui';
+import { Popover as HPopover } from '@headlessui/react';
+import { ReactNode } from 'react';
 import { mapDirectionClass } from '../../styles/consts';
 import popupCls from '../../styles/popup.module.scss';
 import cls from './Popover.module.scss';
@@ -17,7 +17,9 @@ export function Popover(props: PopoverProps) {
     const menuClasses = [mapDirectionClass[direction]];
     return (
         <HPopover className={classNames(cls.Popover, {}, [className, popupCls.popup])}>
-            <HPopover.Button className={popupCls.trigger}>{trigger}</HPopover.Button>
+            <HPopover.Button className={popupCls.trigger} as={'div'}>
+                {trigger}
+            </HPopover.Button>
 
             <HPopover.Panel className={classNames(cls.panel, {}, menuClasses)}>
                 {children}
