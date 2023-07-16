@@ -825,6 +825,20 @@
       "feedback": "Плохой профиль",
       "userId": "1",
       "profileId": "2"
+    },
+    {
+      "userId": "1",
+      "profileId": "3",
+      "rate": 3,
+      "feedback": "qweqwe",
+      "id": "4qQD1Je"
+    },
+    {
+      "userId": "1",
+      "profileId": "4",
+      "rate": 4,
+      "feedback": "wqeqeqweqwe",
+      "id": "3UwkhT1"
     }
   ]
 }
