@@ -742,6 +742,12 @@
       "userId": "1",
       "text": "qweqe",
       "id": "GXKLJny"
+    },
+    {
+      "articleId": "11",
+      "userId": "1",
+      "text": "zczxczcx",
+      "id": "Whb37AC"
     }
   ],
   "profile": [
@@ -750,7 +756,7 @@
       "first": "Makkinni",
       "lastname": "Merritt",
       "age": 17,
-      "currency": "EUR",
+      "currency": "RUB",
       "country": "Japan",
       "city": "Tokyo",
       "username": "admin",
@@ -809,6 +815,13 @@
       "rate": 1,
       "feedback": "norm",
       "id": "gUOil7g"
+    },
+    {
+      "userId": "1",
+      "articleId": "11",
+      "rate": 5,
+      "feedback": "norm",
+      "id": "YSda14t"
     }
   ],
   "profile-ratings": [

@@ -1,29 +1,28 @@
-
-.title{
+.title {
     color: var(--primary-color);
 }
 
-.text{
-    color: var(--secondary-primary-color);
+.text {
+    color: var(--secondary-color);
 }
 
-.error{
-    .title{
+.error {
+    .title {
         color: var(--red-light);
     }
-    
-    .text{
-        color: var(--red-dark)
+
+    .text {
+        color: var(--red-dark);
     }
 }
 
-.inverted{
-    .title{
+.inverted {
+    .title {
         color: var(--inverted-primary-color);
     }
-    
-    .text{
-        color: var(--inverted-secondary-color)
+
+    .text {
+        color: var(--inverted-secondary-color);
     }
 }
 
@@ -46,7 +45,6 @@
 
     .text {
         font: var(--font-m);
-
     }
 }
 
@@ -57,7 +55,6 @@
 
     .text {
         font: var(--font-l);
-
     }
 }
 
@@ -68,6 +65,5 @@
 
     .text {
         font: var(--font-s);
-
     }
 }

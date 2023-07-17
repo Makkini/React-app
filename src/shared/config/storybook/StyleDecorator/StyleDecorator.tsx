@@ -1,4 +1,3 @@
-import { Story } from '@storybook/react'
-import '@/app/styles/index.scss'
-
-export const StyleDecorator = (story:()=> Story)=> story()
+import '@/app/styles/index.scss';
+import { Story } from '@storybook/react';
+export const StyleDecorator = (story: () => Story) => story();
